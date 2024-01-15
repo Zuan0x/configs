@@ -22,12 +22,15 @@ Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
+Plug 'nvim-lua/plenary.nvim' " For Telescope
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' } " Telescope for fuzzy finding
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
-Plug 'folke/trouble.nvim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'diepm/vim-rest-console'
+Plug 'folke/trouble.nvim' " Error List
+Plug 'anuvyklack/windows.nvim' " Window Management
+Plug 'anuvyklack/middleclass'
+Plug 'anuvyklack/animation.nvim'
+Plug 'ryanoasis/vim-devicons' " Icons
+Plug 'diepm/vim-rest-console' " REST Console
 
 set encoding=UTF-8
 :set guifont=Hack_Nerd_Font:h11
@@ -39,7 +42,14 @@ let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
+" nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
+" Map ff to fuzzy find files
+
+nnoremap <C-p> :Telescope find_files<CR>
+nnoremap <C-l> :Telescope buffers<CR>
+
+nnoremap <silent>mm :bnext<CR>
+nnoremap <silent>nn :bprev<CR>
 
 nmap <F8> :TagbarToggle<CR>
 
