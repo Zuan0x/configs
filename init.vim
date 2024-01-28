@@ -31,6 +31,8 @@ Plug 'anuvyklack/middleclass'
 Plug 'anuvyklack/animation.nvim'
 Plug 'ryanoasis/vim-devicons' " Icons
 Plug 'diepm/vim-rest-console' " REST Console
+Plug 'tpope/vim-fugitive' " Git
+Plug 'lewis6991/gitsigns.nvim' " Git Signs
 
 set encoding=UTF-8
 :set guifont=Hack_Nerd_Font:h11
@@ -45,11 +47,18 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 " nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 " Map ff to fuzzy find files
 
-nnoremap <C-p> :Telescope find_files<CR>
-nnoremap <C-l> :Telescope buffers<CR>
+nnoremap <silent>ff :Telescope find_files<CR>
+nnoremap <silent>fm :Telescope buffers<CR>
+nnoremap <silent>fg :Telescope live_grep<CR>
 
 nnoremap <silent>mm :bnext<CR>
 nnoremap <silent>nn :bprev<CR>
+nnoremap <silent>md :bdelete<CR>
+
+nnoremap <silent>9 <C-u><CR>
+nnoremap <silent>0 <C-d><CR>
+
+xnoremap my "+y
 
 nmap <F8> :TagbarToggle<CR>
 
